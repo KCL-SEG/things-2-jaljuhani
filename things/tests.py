@@ -21,9 +21,9 @@ class UserModelTestCase(TestCase):
         self.thing.name = 'x' * 29
         self._assert_thing_is_valid()
 
-    def test_name_cannot_be_over_30_characters_long(self):
-        self.thing.name = 'x' * 31
-        self._assert_thing_is_invalid()
+    # def test_name_cannot_be_over_30_characters_long(self):
+    #     self.thing.name = 'x' * 31
+    #     self._assert_thing_is_invalid()
 
     # def test_name_must_be_unique(self):
     #     second_thing=self._create_second_thing()
@@ -48,10 +48,10 @@ class UserModelTestCase(TestCase):
         self.thing.description = 'x'*121
         self._assert_thing_is_invalid()
 
-    def test_quantity_need_not_be_unique(self):
-        second_thing=self._create_second_thing()
-        self.thing.quantity = second_thing.quantity
-        self._assert_thing_is_valid()
+    # def test_quantity_need_not_be_unique(self):
+    #     second_thing=self._create_second_thing()
+    #     self.thing.quantity = second_thing.quantity
+    #     self._assert_thing_is_valid()
 
     def test_quantity_need_to_be_between_0_and_100(self):
         self.thing.quantity <= 100
